@@ -9,7 +9,17 @@
     <title>TVMonitor</title>
 </head>
 <body>
-	<marquee id="time" scrollamount="10" ></marquee>
+	<div id="card-dialog">
+		<button id="exit-button" onclick="toggleCardDialog()">X</button>
+		<div id="mini-card-wrapper">
+			<div class="mini-card" id="nagios" onclick="newModule('nagios')">
+				Nagios
+			</div>
+		</div>
+	</div>
+	<div id="time-wrapper">
+		<span id="time"></span>
+	</div>
 	<div id="sidebar-wrapper">
 		<div id="sidebar">
 			<iframe id="schedule" src="https://ion.tjhsst.edu/schedule/embed">
@@ -19,8 +29,9 @@
     <div id="wrapper">
 		<div id="content-wrapper">
             <div id="content">
-				<iframe id="monitor" src="http://monitor.tjhsst.edu">
-				</iframe>
+				<div id="add-card-wrapper">
+        			<button id="add-card-button" onclick="toggleCardDialog()">+</button>
+           		</div>
             </div>
         </div>
     </div>
