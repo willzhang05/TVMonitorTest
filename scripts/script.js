@@ -51,7 +51,7 @@ function newModule(s) {
 	if(s = "nagios") {
 		frame = document.createElement("iframe");
 		frame.id = "monitor";
-		frame.src = "http://monitor.tjhsst.edu";
+		frame.src = "https://monitor.tjhsst.edu";
 		frame.width = 720;
 		frame.height = 720;
 		mod.appendChild(frame);
