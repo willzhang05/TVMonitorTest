@@ -25,8 +25,7 @@ function setScale() {
 }
 function displayClock(){time = setTimeout("displayTime()", 1000)}
 function displayTime() {
-	var d = new Date().toString();
-	document.getElementById("time").innerHTML = d.substring(0, d.length - 33);
+	document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
 	t = displayClock();
 }
 function toggleCardDialog() {
@@ -41,11 +40,13 @@ function newModule(s) {
 	var parent = document.getElementById("content"),
 		modWrap = document.createElement("div"),
 		mod = document.createElement("div"),
+		bar = document.createElement("div"),
 		exit = document.createElement("button"),
 		button = document.getElementById("add-card-wrapper");
 	modWrap.className = s + " card";
 	mod.className = s.substring(0, s.length - 8);
-	exit.innerHTML = "X";
+	bar.className = "window-bar";
+	exit.innerHTML = "x";
 	exit.className = "exit-button";
 	exit.onclick = function() {modWrap.remove()};
 	if(s = "nagios") {
@@ -56,7 +57,8 @@ function newModule(s) {
 		frame.height = 720;
 		mod.appendChild(frame);
 	}
-	modWrap.appendChild(exit);
+	modWrap.appendChild(bar);
+	bar.appendChild(exit);
 	modWrap.appendChild(mod);
 	parent.insertBefore(modWrap, button);
 }

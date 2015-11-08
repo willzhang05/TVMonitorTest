@@ -115,12 +115,17 @@ button {
     z-index: 16;
     float:left;
 }
+.window-bar {
+	height: 48px;
+	background-color: #2196F3;
+}
 .exit-button {
-	float: left;
-	width: 50px;
-	color: #fff;
-	font-size: 12px;
-	background-color: #F44336;
+	float: right;
+	width: 48px;
+	height: 48px;
+	color: #464646;
+	font-size: 18px;
+	background-color: inherit;
 }
 #time-wrapper {
     position: fixed;
