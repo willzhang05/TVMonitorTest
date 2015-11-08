@@ -1,7 +1,6 @@
-var scale = 1.5;
-var w = window.innerWidth;
-var h = window.innerHeight;
-var nagios = '<iframe id="monitor" src="http://monitor.tjhsst.edu"></iframe>';
+var scale = 1.5,
+	w = window.innerWidth,
+	h = window.innerHeight;
 setScale();
 displayClock();
 window.onresize = function() {
@@ -27,7 +26,7 @@ function setScale() {
 function displayClock(){time = setTimeout("displayTime()", 1000)}
 function displayTime() {
 	var d = new Date().toString();
-	document.getElementById("time").innerHTML = d.substring(0, d.length - 14);
+	document.getElementById("time").innerHTML = d.substring(0, d.length - 33);
 	t = displayClock();
 }
 function toggleCardDialog() {
@@ -38,15 +37,26 @@ function toggleCardDialog() {
 		dlg.style.display = "none";
 	}
 }
-
 function newModule(s) {
-	var parent = document.getElementById("content");
-	var mod = document.createElement("div");
-	var button = document.getElementById("add-card-wrapper");
-	mod.style.backgroundColor = "red";
-	mod.style.width = "500px";
-	mod.style.height = "500px";
-	mod.innerHTML = "TESTING BLOCK";
-	mod.style.cssFloat = "left";
-	parent.insertBefore(mod, button)
+	var parent = document.getElementById("content"),
+		modWrap = document.createElement("div"),
+		mod = document.createElement("div"),
+		exit = document.createElement("button"),
+		button = document.getElementById("add-card-wrapper");
+	modWrap.className = s + " card";
+	mod.className = s.substring(0, s.length - 8);
+	exit.innerHTML = "X";
+	exit.className = "exit-button";
+	exit.onclick = function() {modWrap.remove()};
+	if(s = "nagios") {
+		frame = document.createElement("iframe");
+		frame.id = "monitor";
+		frame.src = "http://monitor.tjhsst.edu";
+		frame.width = 720;
+		frame.height = 720;
+		mod.appendChild(frame);
+	}
+	modWrap.appendChild(exit);
+	modWrap.appendChild(mod);
+	parent.insertBefore(modWrap, button);
 }
