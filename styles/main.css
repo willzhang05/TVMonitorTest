@@ -88,7 +88,7 @@ button {
     margin: 4px;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #0D47A1;
+    background-color: #F44336;
     color: #fff;
     font-size: 22px;
     /*background-image: url('../icons/ic_add_to_photos_black_48dp.png');*/
@@ -106,12 +106,14 @@ button {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 #add-card-button:active {
-    background-color: #1565C0;
+    background-color: #EF5350;
 }
 #add-card-wrapper {
-    width: 80px;
-    height: 80px;
-    margin: 50px;
+    width: 100px;
+    height: 100px;
+	right: 0;
+	bottom: 0;
+    position: fixed;
     z-index: 16;
     float:left;
 }
@@ -127,11 +129,15 @@ button {
 	font-size: 18px;
 	background-color: inherit;
 }
+/*.exit-button:hover {
+	color: #fff;
+	background-color: #f00;
+}*/
 #time-wrapper {
     position: fixed;
     width: 100%;
     height: 68px;
-    background-color: #0D47A1;
+    background-color: #0048ab;
     text-align: center;
     z-index: 100;
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -208,6 +214,9 @@ button {
 #mini-card-wrapper {
 	margin-top: 50px;
 	margin-left: 50px;
+	width: 100px;
+	height: 100px;
+	background-color: #000;
 }
 .mini-card {
 	width: 100px;
@@ -228,6 +237,7 @@ button {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .mini-card:active {
+	opacity: 0.8;
 	background-color: #bdbdbd;
 }
 .card {
@@ -248,14 +258,12 @@ button {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .nagios-wrapper {
-	width: 500px;
+	width: 750px;
 	height: 750px;
 	background-color: #eee;
 }
 .nagios {
 	height: calc(100% - 25px);
-	margin-left: 15px;
-	margin-right: 15px;
 }
 #monitor {
 	width: 100%;
