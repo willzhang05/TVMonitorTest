@@ -11,11 +11,12 @@
 <body>
 	<div id="card-dialog">
 		<div class="window-bar">
-			<button class="exit-button" onclick="toggleCardDialog()">x</button>
+			<div class="window-label"></div>
+			<button class="exit-button" onclick="toggleCardDialog()"></button>
 		</div>
 		<div id="mini-card-wrapper">
-			<div class="mini-card" onclick="newModule('nagios-wrapper')">
-				<img src="icons/nagios.png" width="100px" height="100px" alt="nagios"/>
+			<div class="mini-card" onclick="new Module('nagios-wrapper')">
+				<img src="icons/nagios.png" width="100px" height="100px" alt="Nagios"/>
 			</div>
 		</div>
 	</div>
@@ -32,7 +33,7 @@
 		<div id="content-wrapper">
             <div id="content">
 				<div id="add-card-wrapper">
-        			<button id="add-card-button" onclick="toggleCardDialog()">+</button>
+        			<button id="add-card-button" onclick="toggleCardDialog()"></button>
            		</div>
             </div>
         </div>
