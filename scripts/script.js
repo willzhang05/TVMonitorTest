@@ -55,6 +55,8 @@ function toggleModExpand(card, expand) {
 		tempW = card.style.width;
 		tempH = card.style.height;
 		tempM = card.style.margin;
+		card.style.left = "30%";
+		card.style.top = "48px";
 		card.style.width = "70%";
 		card.style.height = "100%";
 		card.style.margin = "-0.25px";
@@ -62,6 +64,10 @@ function toggleModExpand(card, expand) {
 		exp = true;
 	}
 }
+/*
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/rejectedtjTODAY" data-widget-id="667454451305836544">Tweets by @rejectedtjTODAY</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+*/
 var Module = class {
 	constructor(s) {
 		var parent = document.getElementById("content"),
@@ -74,17 +80,28 @@ var Module = class {
 		button = document.getElementById("add-card-wrapper");
 		modWrap.className = s + " card";
 		mod.className = s.substring(0, s.length - 8);
+		s = s.substring(0, s.length - 8);
 		bar.className = "window-bar";
 		label.className = "window-label";
 		expand.className = "expand-button";
 		exit.className = "exit-button";
 		exit.onclick = function() {modWrap.remove()};
-		if(s = "nagios") {
+		if(s == "twitter") {
+			var twitter = document.createElement("a");
+			twitter.className = "twitter-timeline";
+			twitter.setAttribute("data-dnt", "true");
+			twitter.setAttribute("data-widget-id", "667454451305836544");
+			twitter.src = "https://twitter.com/rejectedtjTODAY";
+			var script = document.createElement("script");
+			script.src = "scripts/twitter.js"
+			mod.appendChild(twitter);
+			mod.appendChild(script);
+			bar.style.backgroundColor = "#2196F3";
+			expand.onclick = function() {toggleModExpand(modWrap, expand)};
+		} else if(s == "nagios") {
 			var frame = document.createElement("iframe");
 			frame.id = "monitor";
 			frame.src = "https://monitor.tjhsst.edu";
-			frame.width = 720;
-			frame.height = 720;
 			mod.appendChild(frame);
 			bar.style.backgroundColor = "#2196F3";
 			expand.onclick = function() {toggleModExpand(modWrap, expand)};
