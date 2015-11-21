@@ -97,15 +97,24 @@ var Module = class {
 			mod.appendChild(twitter);
 			mod.appendChild(script);
 			bar.style.backgroundColor = "#2196F3";
-			expand.onclick = function() {toggleModExpand(modWrap, expand)};
 		} else if(s == "nagios") {
 			var frame = document.createElement("iframe");
 			frame.id = "monitor";
 			frame.src = "https://monitor.tjhsst.edu";
 			mod.appendChild(frame);
 			bar.style.backgroundColor = "#2196F3";
-			expand.onclick = function() {toggleModExpand(modWrap, expand)};
+		} else if(s.includes("block")) {
+			var frame = document.createElement("iframe");
+			frame.id = "blocks";
+			if(s == "ablock") {
+				frame.src = "https://ion.tjhsst.edu/signage/eighth";
+			} else if(s == "bblock") {
+				frame.src = "https://ion.tjhsst.edu/signage/eighth?block_increment=1";
+			}
+			mod.appendChild(frame);
+			bar.style.backgroundColor = "#bdbdbd";
 		}
+		expand.onclick = function() {toggleModExpand(modWrap, expand)};
 		modWrap.appendChild(bar);
 		label.appendChild(expand);
 		bar.appendChild(label);
