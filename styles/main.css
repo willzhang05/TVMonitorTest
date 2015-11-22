@@ -244,8 +244,8 @@ button {
 }
 .card {
 	float: left;
-	margin-left: 15px;
-	margin-top: 15px;
+	margin-left: 10px;
+	margin-top: 10px;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -260,9 +260,14 @@ button {
     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.nagios-wrapper, .ablock-wrapper, .bblock-wrapper {
+.nagios-wrapper {
 	width: 750px;
 	height: 750px;
+	background-color: #eee;
+}
+.ablock-wrapper, .bblock-wrapper {
+	width: calc(35% - 15px);
+	height: calc(100% - 20px);
 	background-color: #eee;
 }
 .nagios, .ablock, .bblock {
