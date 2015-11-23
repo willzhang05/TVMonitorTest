@@ -261,7 +261,7 @@ button {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .nagios-wrapper {
-	width: calc(35% - 15px);
+	width: 750px;
 	height: calc(100% - 20px);
 	background-color: #eee;
 }
