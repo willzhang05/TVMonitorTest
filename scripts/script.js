@@ -27,8 +27,7 @@ setInterval(function(){
 		fade(button);
 	}
 	hov = false;  
-}, 1000);
-
+}, 3000);
 function fade(element) {
 		var op = 1;  // initial opacity
 		var timer = setInterval(function () {
@@ -39,7 +38,7 @@ function fade(element) {
 			element.style.opacity = op;
 			element.style.filter = 'alpha(opacity=' + op * 100 + ")";
 			op -= op * 0.1;
-		}, 50);
+		}, 5);
 }
 function unfade(element) {
 		var op = 0.1;  // initial opacity
@@ -50,7 +49,7 @@ function unfade(element) {
 			element.style.opacity = op;
 			element.style.filter = 'alpha(opacity=' + op * 100 + ")";
 			op += op * 0.1;
-		}, 10);
+		}, 5);
 }
 function setScale() {
 	var element = document.getElementById('schedule'),
@@ -103,10 +102,8 @@ function toggleModExpand(card, expand) {
 		exp = true;
 	}
 }
-/*
-<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/rejectedtjTODAY" data-widget-id="667454451305836544">Tweets by @rejectedtjTODAY</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-*/
+/*<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/rejectedtjTODAY" data-widget-id="667454451305836544">Tweets by @rejectedtjTODAY</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>*/
 var Module = class {
 	constructor(s) {
 		var parent = document.getElementById("content"),
@@ -141,7 +138,7 @@ var Module = class {
 			frame.id = "monitor";
 			frame.src = "https://monitor.tjhsst.edu";
 			mod.appendChild(frame);
-			bar.style.backgroundColor = "#2196F3";
+			bar.style.backgroundColor = "#4CAF50";
 		} else if(s.includes("block")) {
 			var frame = document.createElement("iframe");
 			frame.id = "blocks";

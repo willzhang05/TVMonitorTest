@@ -261,8 +261,8 @@ button {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .nagios-wrapper {
-	width: 750px;
-	height: 750px;
+	width: calc(35% - 15px);
+	height: calc(100% - 20px);
 	background-color: #eee;
 }
 .ablock-wrapper, .bblock-wrapper {
@@ -272,6 +272,7 @@ button {
 }
 .nagios, .ablock, .bblock {
 	height: calc(100% - 25px);
+	overflow: hidden;
 }
 .twitter-wrapper {
 	min-width: 520px;
