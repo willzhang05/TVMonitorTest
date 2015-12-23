@@ -87,17 +87,28 @@ function toggleModExpand(card, expand) {
 		card.style.width = tempW;
 		card.style.height = tempH;
 		card.style.margin = tempM;
+		card.style.zIndex = "15";
 		expand.style.backgroundImage = "url('icons/ic_expand_less_black_48px.svg')";
 		exp = false;
 	} else {
 		tempW = card.style.width;
 		tempH = card.style.height;
 		tempM = card.style.margin;
-		card.style.left = "30%";
-		card.style.top = "48px";
-		card.style.width = "70%";
-		card.style.height = "100%";
-		card.style.margin = "-0.25px";
+		if((card.className).indexOf("plex") > -1) {
+			card.style.float = "none";
+			card.style.marginLeft = "-30%";
+			card.style.marginTop = "-68px";
+			card.style.position = "absolute";
+			card.style.zIndex = "100000000";
+			card.style.width = "100%";
+			card.style.height = "100%";
+		} else {
+			card.style.left = "30%";
+			card.style.top = "48px";
+			card.style.width = "70%";
+			card.style.height = "100%";
+			card.style.margin = "-0.25px";
+		}
 		expand.style.backgroundImage = "url('icons/ic_expand_more_black_48px.svg')";
 		exp = true;
 	}
@@ -149,6 +160,12 @@ var Module = class {
 			}
 			mod.appendChild(frame);
 			bar.style.backgroundColor = "#bdbdbd";
+		} else if(s == "plex") {
+			var frame = document.createElement("iframe");
+			frame.id = "stream";
+			frame.src = "https://app.plex.tv/web/app";
+			mod.appendChild(frame);
+			bar.style.backgroundColor = "#F9B232";
 		}
 		expand.onclick = function() {toggleModExpand(modWrap, expand)};
 		modWrap.appendChild(bar);
