@@ -270,12 +270,12 @@ button {
     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.nagios-wrapper, .plex-wrapper, .kanboard {
+.nagios-wrapper, .plex-wrapper {
 	width: calc(70% - 20px);
 	height: calc(100% - 34px);
 	background-color: #eee;
 }
-.ablock-wrapper, .bblock-wrapper {
+.ablock-wrapper, .bblock-wrapper, .kanboard-wrapper {
 	width: calc(35% - 15px);
 	height: calc(100% - 34px);
 	background-color: #eee;
@@ -295,10 +295,6 @@ button {
 .twitter {
 	width: inherit;
 	height: inherit;
-}
-#twitter-wrapper-0 {
-	width: 100%;
-	height: 100%;
 }
 #monitor, #kanboard, #blocks, #stream {
 	width: 100%;
