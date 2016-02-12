@@ -133,23 +133,18 @@ var Module = class {
 		expand.className = "expand-button";
 		exit.className = "exit-button";
 		exit.onclick = function() {modWrap.remove()};
-		if(s == "twitter") {
-			var twitter = document.createElement("a");
-			twitter.className = "twitter-timeline";
-			twitter.setAttribute("data-dnt", "true");
-			twitter.setAttribute("data-widget-id", "667454451305836544");
-			twitter.src = "https://twitter.com/rejectedtjTODAY";
-			var script = document.createElement("script");
-			script.src = "scripts/twitter.js"
-			mod.appendChild(twitter);
-			mod.appendChild(script);
-			bar.style.backgroundColor = "#2196F3";
-		} else if(s == "nagios") {
+		if(s == "nagios") {
 			var frame = document.createElement("iframe");
 			frame.id = "monitor";
 			frame.src = "https://monitor.tjhsst.edu";
 			mod.appendChild(frame);
 			bar.style.backgroundColor = "#4CAF50";
+		} else if(s == "kanboard") {
+			var frame = document.createElement("iframe");
+			frame.id = "kanboard";
+			frame.src = "https://kanboard.tjhsst.edu";
+			mod.appendChild(frame);
+			bar.style.backgroundColor = "#D40000";
 		} else if(s.includes("block")) {
 			var frame = document.createElement("iframe");
 			frame.id = "blocks";
@@ -160,6 +155,17 @@ var Module = class {
 			}
 			mod.appendChild(frame);
 			bar.style.backgroundColor = "#bdbdbd";
+		} else if(s == "twitter") {
+			var twitter = document.createElement("a");
+			twitter.className = "twitter-timeline";
+			twitter.setAttribute("data-dnt", "true");
+			twitter.setAttribute("data-widget-id", "667454451305836544");
+			twitter.src = "https://twitter.com/rejectedtjTODAY";
+			var script = document.createElement("script");
+			script.src = "scripts/twitter.js"
+			mod.appendChild(twitter);
+			mod.appendChild(script);
+			bar.style.backgroundColor = "#2196F3";
 		} else if(s == "plex") {
 			var frame = document.createElement("iframe");
 			frame.id = "stream";

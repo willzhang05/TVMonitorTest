@@ -109,6 +109,10 @@ button {
 }
 .window-bar {
 	height: 48px;
+	background-color: #424242;
+}
+#card-dialog > .window-bar > .exit-button {
+	background-image: url('../icons/ic_close_white_48px.svg');
 }
 .exit-button {
 	float: left;
@@ -210,7 +214,7 @@ button {
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 #mini-card-wrapper {
-	margin-top: 2px;
+	margin-top: 25px;
 	margin-left: 25px;
 	width: 100px;
 	height: 100px;
@@ -242,10 +246,16 @@ button {
 	opacity: 0.8;
 	background-color: #bdbdbd;
 }
+.mini-card-overlay {
+	display: block;
+	float: middle;
+	font-size: 12px;
+}
 .card {
 	float: left;
 	margin-left: 10px;
 	margin-top: 10px;
+	margin-bottom: 10px;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -262,16 +272,16 @@ button {
 }
 .nagios-wrapper, .plex-wrapper {
 	width: calc(70% - 20px);
-	height: calc(100% - 20px);
+	height: calc(100% - 34px);
 	background-color: #eee;
 }
 .ablock-wrapper, .bblock-wrapper {
 	width: calc(35% - 15px);
-	height: calc(100% - 20px);
+	height: calc(100% - 34px);
 	background-color: #eee;
 }
 .nagios, .ablock, .bblock, .plex {
-	height: calc(100% - 25px);
+	height: calc(100% - 34px);
 	overflow: hidden;
 }
 .twitter-wrapper {
@@ -287,9 +297,11 @@ button {
 	width: 100%;
 	height: 100%;
 }
-#monitor, #blocks, #stream {
+#monitor, #kanboard, #blocks, #stream {
 	width: 100%;
-	height: inherit;
+	height: 100%;
+	margin-bottom: -4.8px;
 	position: relative;
 	overflow: hidden;
+	background-color: #eee;
 }
