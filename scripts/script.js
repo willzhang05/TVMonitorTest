@@ -142,7 +142,7 @@ var Module = class {
 		} else if(s == "kanboard") {
 			var frame = document.createElement("iframe");
 			frame.id = "kanboard";
-			frame.src = "https://kanboard.tjhsst.edu";
+			frame.src = "https://kanboard.tjhsst.edu/?controller=board&action=readonly&token=38f38e592d33edeeb2256b727d431c0dcfcd1a10bf59e40982da14360293";
 			mod.appendChild(frame);
 			bar.style.backgroundColor = "#D40000";
 		} else if(s.includes("block")) {

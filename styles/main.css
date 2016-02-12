@@ -270,7 +270,7 @@ button {
     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.nagios-wrapper, .plex-wrapper {
+.nagios-wrapper, .plex-wrapper, .kanboard {
 	width: calc(70% - 20px);
 	height: calc(100% - 34px);
 	background-color: #eee;
@@ -280,9 +280,12 @@ button {
 	height: calc(100% - 34px);
 	background-color: #eee;
 }
-.nagios, .ablock, .bblock, .plex {
+.nagios, .ablock, .bblock, .plex, .kanboard {
 	height: calc(100% - 34px);
 	overflow: hidden;
+}
+.kanboard {
+    width: 100%;
 }
 .twitter-wrapper {
 	min-width: 520px;
