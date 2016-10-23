@@ -28,15 +28,6 @@ time, mark, audio, video {
     vertical-align: baseline;
     border: 0
 }
-::-webkit-scrollbar {
-    width: 15px
-}
-::-webkit-scrollbar-track {
-    background-color: #eee
-}
-::-webkit-scrollbar-thumb {
-    background-color: #bdbdbd
-}
 body {
     overflow: hidden;
     width: 100%;
@@ -82,16 +73,89 @@ button {
     border: none;
     outline: 0
 }
-#time {
+#add-card-button {
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #F44336;
+    color: #fff;
+    background-image: url('../icons/ic_add_white_48px.svg');
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 17;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+#add-card-button:hover {
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#add-card-button:active {
+    background-color: #E57373;
+}
+#add-card-wrapper {
+    width: 100px;
+    height: 100px;
+	right: 0;
+	bottom: 0;
     position: fixed;
-    font-size: 48px;
+    z-index: 16;
+    float:left;
+}
+.window-bar {
+	height: 48px;
+	background-color: #424242;
+}
+#card-dialog > .window-bar > .exit-button {
+	background-image: url('../icons/ic_close_white_48px.svg');
+}
+.exit-button {
+	float: left;
+	width: 48px;
+	height: inherit;
+	color: #464646;
+	font-size: 18px;
+	background-color: inherit;
+	background-image: url('../icons/ic_close_black_48px.svg');
+	background-size: 45% 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.window-label {
+	float:left;
+	width: calc(100% - 48px);
+	height: inherit;
+}
+.expand-button {
+	width: 48px;
+	height: inherit;
+	background-color: inherit;
+	background-image: url('../icons/ic_expand_less_black_48px.svg');
+	background-size: 45% 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#time-wrapper {
+    position: fixed;
+    width: 100%;
     height: 68px;
-    background-color: #0D47A1;
-	color: #fff;
+    background-color: #0048ab;
+    text-align: center;
     z-index: 100;
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#time {
+	display: block;
+   	margin: 7.5px;
+	font-size: 40px;
+	color: #fff;
 }
 #schedule {
     position: relative;
@@ -115,11 +179,6 @@ button {
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    -webkit-transition: all .4s ease;
-    -moz-transition: all .4s ease;
-    -ms-transition: all .4s ease;
-    -o-transition: all .4s ease;
-    transition: all .4s ease;
     background-color: #eee;
 }
 #sidebar {
@@ -132,15 +191,116 @@ button {
 #content-wrapper {
     width: 100%;
     text-align: center;
+    margin-top: 68px;
+    margin-left: 30%;
 }
 #content {
     height: calc(100vh - 68px);
     font-size: 20px;
-    text-align: left;
+    text-align: left;   
 }
-#monitor {
-	margin-top: 68px;
-    margin-left: 30%;
-    width: 70%;
-    height: inherit;
+#card-dialog {
+	margin: 10% 25% ;
+	max-height: 500px;
+	height: 50%;
+	width: 50%;
+	text-align: center;
+	background-color: #eee;
+	display: none; 
+	z-index: 10000;
+	position: absolute;
+	-webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+#mini-card-wrapper {
+	margin-top: 25px;
+	margin-left: 25px;
+	width: 100px;
+	height: 100px;
+	float: left;
+	background-color: #000;
+	z-index: 10000;
+}
+.mini-card {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	background-color: #eee;
+	z-index: 10002;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.mini-card:hover {
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.mini-card:active {
+	opacity: 0.8;
+	background-color: #bdbdbd;
+}
+.mini-card-overlay {
+	display: block;
+	float: middle;
+	font-size: 12px;
+}
+.card {
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	-webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.card:hover {
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.nagios-wrapper, .plex-wrapper {
+	width: calc(70% - 20px);
+	height: calc(100% - 34px);
+	background-color: #eee;
+}
+.ablock-wrapper, .bblock-wrapper, .kanboard-wrapper {
+	width: calc(35% - 15px);
+	height: calc(100% - 34px);
+	background-color: #eee;
+}
+.nagios, .ablock, .bblock, .plex, .kanboard {
+	height: calc(100% - 34px);
+	overflow: hidden;
+}
+.kanboard {
+    width: 100%;
+}
+.twitter-wrapper {
+	min-width: 520px;
+	height: 750px;
+	background-color: #eee;
+}
+.twitter {
+	width: inherit;
+	height: inherit;
+}
+#monitor, #kanboard, #blocks, #stream {
+	width: 100%;
+	height: 100%;
+	margin-bottom: -4.8px;
+	position: relative;
+	overflow: hidden;
+	background-color: #eee;
 }

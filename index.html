@@ -6,10 +6,55 @@
     <meta content="William Zhang" name="author"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <link href="styles/main.css" rel="stylesheet"/>
+    <link href="icons/favicon.ico" rel="icon" type="image/ico"/>
     <title>TVMonitor</title>
 </head>
 <body>
-	<marquee id="time" scrollamount="10" ></marquee>
+	<div id="card-dialog">
+		<div class="window-bar">
+			<div class="window-label"></div>
+			<button class="exit-button" onclick="toggleCardDialog()"></button>
+		</div>
+		<div id="mini-card-wrapper">
+			<div class="mini-card" onclick="new Module('nagios-wrapper')">
+				<img src="icons/nagios.svg" width="100px" height="100px" alt="Nagios"/>
+				<span class="mini-card-overlay">Nagios</span>
+			</div>
+		</div>
+		<div id="mini-card-wrapper">
+			<div class="mini-card" onclick="new Module('kanboard-wrapper')">
+				<img src="icons/kanboard.svg" width="100px" height="100px" alt="Kanboard"/>
+				<span class="mini-card-overlay">Kanboard</span>
+			</div>
+		</div>
+		<div id="mini-card-wrapper">
+			<div class="mini-card" onclick="new Module('ablock-wrapper')">
+				<img src="icons/tj.svg" width="100px" height="100px" alt="8th Period A Block"/>
+				<span class="mini-card-overlay">8th Period A Block</span>
+			</div>
+		</div>
+		<div id="mini-card-wrapper">
+			<div class="mini-card" onclick="new Module('bblock-wrapper')">
+				<img src="icons/tj.svg" width="100px" height="100px" alt="8th Period B Block"/>
+				<span class="mini-card-overlay">8th Period B Block</span>
+			</div>
+		</div>
+		<div id="mini-card-wrapper">
+			<div class="mini-card" onclick="new Module('twitter-wrapper')">
+				<img src="icons/twitter.svg" width="100px" height="100px" alt="Twitter"/>
+				<span class="mini-card-overlay">Twitter</span>
+			</div>
+		</div>
+		<div id="mini-card-wrapper">
+			<div class="mini-card" onclick="new Module('plex-wrapper')">
+				<img src="icons/plex.svg" width="100px" height="100px" alt="Plex"/>
+				<span class="mini-card-overlay">Plex</span>
+			</div>
+		</div>
+	</div>
+	<div id="time-wrapper">
+		<span id="time"></span>
+	</div>
 	<div id="sidebar-wrapper">
 		<div id="sidebar">
 			<iframe id="schedule" src="https://ion.tjhsst.edu/schedule/embed">
@@ -19,8 +64,9 @@
     <div id="wrapper">
 		<div id="content-wrapper">
             <div id="content">
-				<iframe id="monitor" src="http://monitor.tjhsst.edu">
-				</iframe>
+				<div id="add-card-wrapper">
+        			<button id="add-card-button" onclick="toggleCardDialog()"></button>
+           		</div>
             </div>
         </div>
     </div>
